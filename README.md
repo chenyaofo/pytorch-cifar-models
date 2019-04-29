@@ -28,8 +28,8 @@ torchvision.transforms.Compose([
     torchvision.transforms.RandomHorizontalFlip(),
     torchvision.transforms.ToTensor(),
     torchvision.transforms.Normalize(
-        mean=[0.49139968, 0.48215827, 0.44653124],
-        std=[0.24703233, 0.24348505, 0.26158768],
+        mean=[0.4914, 0.4822, 0.4465], # mean=[0.5071, 0.4865, 0.4409] for cifar100
+        std=[0.2023, 0.1994, 0.2010], # std=[0.2009, 0.1984, 0.2023] for cifar100
     ),
 ])
 ```
