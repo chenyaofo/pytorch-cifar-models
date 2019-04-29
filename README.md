@@ -6,11 +6,12 @@ The validation is performed with the original view of the image(size=32x32).
 
 **Note**: the FLOPs only counts the conv and linear layer.
 
-| Model    | Acc@1 | Acc@5 | #param. | FLOPs |
-|----------|-------|-------|---------|-------|
-| Resnet20 |       |       |         |       |
-| Resnet32 |       |       |         |       |
-| Resnet56 |       |       |         |       |
+| Model         | Acc@1(C10) | Acc@5(C10) | Acc@1(C100) | Acc@5(C100) | #param. | FLOPs |
+|---------------|------------|------------|-------------|-------------|---------|-------|
+| Resnet20[[1]] |            |            |             |             |         |       |
+| Resnet32[[1]] |            |            |             |             |         |       |
+| Resnet56[[1]] |            |            |             |             |         |       |
+| PreactResnet20[[2]] |            |            |             |             |         |       |
 
 ## Pretrained Models
 
@@ -20,7 +21,7 @@ All the pretrained models are avaliable in the [release](https://github.com/chen
 
 The models are trained and exported with Pytorch(1.0.1.post2) and torchvision(0.2.1).
 
-The training data augumentation follow [1],
+The training data augumentation follow [[1]],
 ```
 torchvision.transforms.Compose([
     torchvision.transforms.RandomCrop(size=32, padding=4),
@@ -46,7 +47,13 @@ the total training epochs is 200.
 
 ## Reference
 
-[1]. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 770-778).
+1. He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian. Deep residual learning for image recognition. In *CVPR*, 2016.
+
+[1]: https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html
+
+2. Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Identity Mappings in Deep Residual Networks. In *ECCV*, 2016.
+
+[2]: https://link.springer.com/chapter/10.1007/978-3-319-46493-0_38
 
 ## Acknowledgement
 
