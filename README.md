@@ -19,7 +19,7 @@ All the pretrained models are avaliable in the [release](https://github.com/chen
 
 ## Implementation Details
 
-The models are trained and exported with Pytorch(1.0.1.post2) and torchvision(0.2.1).
+The models are trained and exported with Pytorch(1.1.0) and torchvision(0.2.1).
 
 The training data augumentation follow [[1]],
 ```
@@ -40,7 +40,7 @@ torch.optim.SGD(..., lr=0.1, momentum=0.9, dampening=0, weight_decay=1e-4, neste
 ```
 the following scheduler,
 ```
-torch.optim.lr_scheduler.MultiStepLR(..., milestones=[100,150], gamma=0.1)
+ctx.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(T_max=200)
 ```
 the total training epochs is 200.
 
