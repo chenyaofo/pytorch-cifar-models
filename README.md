@@ -19,7 +19,7 @@ All the pretrained models are avaliable in the [release](https://github.com/chen
 
 ## Implementation Details
 
-The models are trained and exported with Pytorch(1.1.0) and torchvision(0.2.1).
+The models are trained and exported with Pytorch(1.1.0) and torchvision(0.2.2).
 
 The training data augumentation follow [[1]],
 ```
