@@ -36,7 +36,7 @@ torchvision.transforms.Compose([
 
 All the models are trained with a mini batch size of 256 and the following optimizer,
 ```
-torch.optim.SGD(..., lr=0.1, momentum=0.9, dampening=0, weight_decay=1e-4, nesterov=True)
+torch.optim.SGD(lr=0.1, momentum=0.9, dampening=0, weight_decay=1e-4, nesterov=True)
 ```
 the following scheduler,
 ```
