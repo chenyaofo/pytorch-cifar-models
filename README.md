@@ -4,14 +4,15 @@
 
 The validation is performed with the original view of the image(size=32x32).
 
-**Note**: the FLOPs only counts the conv and linear layer.
+**Note**: the FLOPs and the number of parameters only counts the conv and linear layer.
 
 | Model         | Acc@1(C10) | Acc@5(C10) | Acc@1(C100) | Acc@5(C100) | #param. | FLOPs |
 |---------------|------------|------------|-------------|-------------|---------|-------|
-| Resnet20[[1]] |            |            |             |             |         |       |
-| Resnet32[[1]] |            |            |             |             |         |       |
-| Resnet56[[1]] |            |            |             |             |         |       |
-| PreactResnet20[[2]] |            |            |             |             |         |       |
+| Resnet20[[1]] |    91.65        |    99.68        |     66.61        |    89.95         |   0.27M      |   40.81M    |
+| Resnet32[[1]] |    92.81        |     99.72       |     68.74        |    90.23         |   0.46M      |  69.12M     |
+| Resnet44[[1]] |    93.24        |      99.75      |     69.49        |    90.39         |   0.66M      |   97.44M    |
+| Resnet56[[1]] |     93.69       |    99.68        |     70.79        |    91.10         |   0.85M      |   125.75M    |
+
 
 ## Pretrained Models
 
@@ -42,7 +43,7 @@ torch.optim.SGD(lr=0.1, momentum=0.9, dampening=0, weight_decay=1e-4, nesterov=T
 ```
 the following scheduler,
 ```
-ctx.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(T_max=200)
+ctx.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(T_max=200,eta_min=0.001)
 ```
 the total training epochs is 200.
 
