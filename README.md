@@ -6,26 +6,21 @@ The goal of this project is to provide some neural network examples and a simple
 
 ## Get Started with Google Colab
 
-### Train Models
-
-Open the notebook to train the models from scratch on CIFAR10/100.
+**Train Models**: Open the notebook to train the models from scratch on CIFAR10/100.
 It will takes several hours depend on the complexity of the model and the allocated GPU type.
 
-### Test Models
-
-Open the notebook to measure the validation accuracy on CIFAR10/100 with pretrained models.
+**Test Models**: Open the notebook to measure the validation accuracy on CIFAR10/100 with pretrained models.
 It will only take about few seconds.
 
-## Use Models in Your Project
+## Use Models with Pytorch Hub
 
-### Run with Pytorch Hub
+You can simply use the pretrained models in your project with `torch.hub` API.
+It will automatically load the code and the pretrained weights from GitHub.
 
 ``` python
 import torch
-model = torch.hub.load("chenyaofo/pytorch-cifar-models", "cifar_resnet20")
+model = torch.hub.load("chenyaofo/pytorch-cifar-models", "cifar_resnet20", pretrained=True)
 ```
-
-### Run with Copying Code Snip
 
 
 ## Model Zoo
