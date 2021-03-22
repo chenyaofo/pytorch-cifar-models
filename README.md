@@ -1,63 +1,57 @@
-# CIFAR-pretrained-models
+# Pytorch CIFAR Models
 
-## Accuracy in the Validation Set
+## Introduction
 
-The validation is performed with the original view of the image(size=32x32).
+The goal of this project is to provide some neural network examples and a simple training codebase for begginners.
 
-**Note**: the FLOPs and the number of parameters only counts the conv and linear layer.
+## Get Started with Google Colab
 
-| Model         | Acc@1(C10) | Acc@5(C10) | Acc@1(C100) | Acc@5(C100) | #param. | FLOPs |
-|---------------|------------|------------|-------------|-------------|---------|-------|
-| Resnet20[[1]] |    91.65        |    99.68        |     66.61        |    89.95         |   0.27M      |   40.81M    |
-| Resnet32[[1]] |    92.81        |     99.72       |     68.74        |    90.23         |   0.46M      |  69.12M     |
-| Resnet44[[1]] |    93.24        |      99.75      |     69.49        |    90.39         |   0.66M      |   97.44M    |
-| Resnet56[[1]] |     93.69       |    99.68        |     70.79        |    91.10         |   0.85M      |   125.75M    |
+### Train Models
 
+Open the notebook to train the models from scratch on CIFAR10/100.
+It will takes several hours depend on the complexity of the model and the allocated GPU type.
 
-## Pretrained Models
+### Test Models
 
-All the pretrained models are avaliable in the [release](https://github.com/chenyaofo/CIFAR-pretrained-models/releases).
+Open the notebook to measure the validation accuracy on CIFAR10/100 with pretrained models.
+It will only take about few seconds.
 
-## Implementation Details
+## Use Models in Your Project
 
-The models are trained and exported with [PyTorch(1.1.0)](https://github.com/pytorch/pytorch/releases/tag/v1.1.0)
-and 
-[torchvision(0.2.2)](https://github.com/pytorch/vision/releases/tag/v0.2.2).
+### Run with Pytorch Hub
 
-The training data augumentation follow [[1]],
-```
-torchvision.transforms.Compose([
-    torchvision.transforms.RandomCrop(size=32, padding=4),
-    torchvision.transforms.RandomHorizontalFlip(),
-    torchvision.transforms.ToTensor(),
-    torchvision.transforms.Normalize(
-        mean=[0.4914, 0.4822, 0.4465], # mean=[0.5071, 0.4865, 0.4409] for cifar100
-        std=[0.2023, 0.1994, 0.2010], # std=[0.2009, 0.1984, 0.2023] for cifar100
-    ),
-])
+``` python
+import torch
+model = torch.hub.load("chenyaofo/pytorch-cifar-models", "cifar_resnet20")
 ```
 
-All the models are trained with a mini batch size of 256 and the following optimizer,
-```
-torch.optim.SGD(lr=0.1, momentum=0.9, dampening=0, weight_decay=1e-4, nesterov=True)
-```
-the following scheduler,
-```
-ctx.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(T_max=200,eta_min=0.001)
-```
-the total training epochs is 200.
+### Run with Copying Code Snip
 
 
-## Reference
+## Model Zoo
 
-1. Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep residual learning for image recognition. In *CVPR*, 2016.
+The pretrained weights of the following models are avaliable in the [release](https://github.com/chenyaofo/pytorch-cifar-models/releases).
 
-[1]: https://www.cv-foundation.org/openaccess/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html
+### CIFAR-10
 
-2. Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Identity Mappings in Deep Residual Networks. In *ECCV*, 2016.
+|  Model   |  Top-1 Acc.(%) | Top-5 Acc.(%) | #Params.(M) | MAdds(M) |                    |
+|----------|----------------|---------------|-------------|----------|--------------------|
+| Resnet20 | 91.65          | 99.68         | 0.27        | 40.81    | log \| tensorboard |
+| Resnet34 | 92.81          | 99.72         | 0.46        | 69.12    | log \| tensorboard |
+| Resnet44 | 93.24          | 99.75         | 0.66        | 97.44    | log \| tensorboard |
+| Resnet56 | 93.69          | 99.68         | 0.85        | 125.75   | log \| tensorboard |
 
-[2]: https://link.springer.com/chapter/10.1007/978-3-319-46493-0_38
+### CIFAR-100
 
-## Acknowledgement
+|  Model   |  Top-1 Acc.(%) | Top-5 Acc.(%) | #Params.(M) | MAdds(M) |                    |
+|----------|----------------|---------------|-------------|----------|--------------------|
+| Resnet20 | 66.61          | 89.95         | 0.27        | 40.81    | log \| tensorboard |
+| Resnet34 | 68.74          | 90.23         | 0.46        | 69.12    | log \| tensorboard |
+| Resnet44 | 69.49          | 90.39         | 0.66        | 97.44    | log \| tensorboard |
+| Resnet56 | 70.79          | 91.10         | 0.85        | 125.75   | log \| tensorboard |
 
-Thanks for the computer vision community and github open source community.
+---
+
+**Note**: #Params and MAdds only counts the convolution and linear layer.
+
+
