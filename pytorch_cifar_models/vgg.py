@@ -43,24 +43,16 @@ from functools import partial
 from typing import Union, List, Dict, Any, cast
 
 cifar10_pretrained_weight_urls = {
-    'vgg11': '',
     'vgg11_bn': '',
-    'vgg13': '',
     'vgg13_bn': '',
-    'vgg16': '',
     'vgg16_bn': '',
-    'vgg19': '',
     'vgg19_bn': '',
 }
 
 cifar100_pretrained_weight_urls = {
-    'vgg11': '',
     'vgg11_bn': '',
-    'vgg13': '',
     'vgg13_bn': '',
-    'vgg16': '',
     'vgg16_bn': '',
-    'vgg19': '',
     'vgg19_bn': '',
 }
 
@@ -145,40 +137,31 @@ def _vgg(arch: str, cfg: str, batch_norm: bool,
     return model
 
 
-def cifar10_vgg11(*args, **kwargs) -> VGG: pass
 def cifar10_vgg11_bn(*args, **kwargs) -> VGG: pass
-def cifar10_vgg13(*args, **kwargs) -> VGG: pass
 def cifar10_vgg13_bn(*args, **kwargs) -> VGG: pass
-def cifar10_vgg16(*args, **kwargs) -> VGG: pass
 def cifar10_vgg16_bn(*args, **kwargs) -> VGG: pass
-def cifar10_vgg19(*args, **kwargs) -> VGG: pass
 def cifar10_vgg19_bn(*args, **kwargs) -> VGG: pass
 
 
-def cifar100_vgg11(*args, **kwargs) -> VGG: pass
 def cifar100_vgg11_bn(*args, **kwargs) -> VGG: pass
-def cifar100_vgg13(*args, **kwargs) -> VGG: pass
 def cifar100_vgg13_bn(*args, **kwargs) -> VGG: pass
-def cifar100_vgg16(*args, **kwargs) -> VGG: pass
 def cifar100_vgg16_bn(*args, **kwargs) -> VGG: pass
-def cifar100_vgg19(*args, **kwargs) -> VGG: pass
 def cifar100_vgg19_bn(*args, **kwargs) -> VGG: pass
 
 
 thismodule = sys.modules[__name__]
 for dataset in ["cifar10", "cifar100"]:
-    for cfg, model_name in zip(["A", "B", "D", "E"], ["vgg11", "vgg13", "vgg16", "vgg19"]):
-        for batch_norm in [False, True]:
-            method_name = f"{dataset}_{model_name}{'_bn' if batch_norm else ''}"
-            model_urls = cifar10_pretrained_weight_urls if dataset == "cifar10" else cifar100_pretrained_weight_urls
-            num_classes = 10 if dataset == "cifar10" else 100
-            setattr(
-                thismodule,
-                method_name,
-                partial(_vgg,
-                        arch=model_name,
-                        cfg=cfg,
-                        batch_norm=batch_norm,
-                        model_urls=model_urls,
-                        num_classes=num_classes)
-            )
+    for cfg, model_name in zip(["A", "B", "D", "E"], ["vgg11_bn", "vgg13_bn", "vgg16_bn", "vgg19_bn"]):
+        method_name = f"{dataset}_{model_name}"
+        model_urls = cifar10_pretrained_weight_urls if dataset == "cifar10" else cifar100_pretrained_weight_urls
+        num_classes = 10 if dataset == "cifar10" else 100
+        setattr(
+            thismodule,
+            method_name,
+            partial(_vgg,
+                    arch=model_name,
+                    cfg=cfg,
+                    batch_norm=True,
+                    model_urls=model_urls,
+                    num_classes=num_classes)
+        )
