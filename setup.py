@@ -21,7 +21,7 @@ def find_version(*file_paths):
         raise RuntimeError("Unable to find version string.")
 
 
-VERSION = find_version('cifar_pretrainedmodels', '__init__.py')
+VERSION = find_version('pytorch_cifar_models', '__init__.py')
 
 
 def find_requirements(file_path):
@@ -32,10 +32,10 @@ def find_requirements(file_path):
 requirements = find_requirements("requirements.txt")
 
 setup(
-    name="cifar_pretrainedmodels",
+    name="pytorch_cifar_models",
     version=VERSION,
     description="Pretrained models for CIFAR10/100 in PyTorch",
-    url="https://github.com/chenyaofo/CIFAR-pretrained-models",
+    url="https://github.com/chenyaofo/pytorch-cifar-models",
     author="chenyaofo",
     author_email="chenyaofo@gmail.com",
     packages=find_packages(exclude=['test']),

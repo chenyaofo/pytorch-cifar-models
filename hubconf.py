@@ -1,6 +1,29 @@
 dependencies = ['torch']
 
-from cifar_pretrainedmodels import cifar_resnet20
-from cifar_pretrainedmodels import cifar_resnet32
-from cifar_pretrainedmodels import cifar_resnet44
-from cifar_pretrainedmodels import cifar_resnet56
+from pytorch_cifar_models import cifar10_resnet20
+from pytorch_cifar_models import cifar10_resnet32
+from pytorch_cifar_models import cifar10_resnet44
+from pytorch_cifar_models import cifar10_resnet56
+
+from pytorch_cifar_models import cifar100_resnet20
+from pytorch_cifar_models import cifar100_resnet32
+from pytorch_cifar_models import cifar100_resnet44
+from pytorch_cifar_models import cifar100_resnet56
+
+from pytorch_cifar_models import cifar10_vgg11
+from pytorch_cifar_models import cifar10_vgg11_bn
+from pytorch_cifar_models import cifar10_vgg13
+from pytorch_cifar_models import cifar10_vgg13_bn
+from pytorch_cifar_models import cifar10_vgg16
+from pytorch_cifar_models import cifar10_vgg16_bn
+from pytorch_cifar_models import cifar10_vgg19
+from pytorch_cifar_models import cifar10_vgg19_bn
+
+from pytorch_cifar_models import cifar100_vgg11
+from pytorch_cifar_models import cifar100_vgg11_bn
+from pytorch_cifar_models import cifar100_vgg13
+from pytorch_cifar_models import cifar100_vgg13_bn
+from pytorch_cifar_models import cifar100_vgg16
+from pytorch_cifar_models import cifar100_vgg16_bn
+from pytorch_cifar_models import cifar100_vgg19
+from pytorch_cifar_models import cifar100_vgg19_bn
