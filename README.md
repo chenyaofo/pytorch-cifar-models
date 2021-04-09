@@ -4,7 +4,7 @@
 
 The goal of this project is to provide some neural network examples and a simple training codebase for begginners.
 
-## Get Started with Google Colab
+## Get Started with Google Colab (TODO)
 
 **Train Models**: Open the notebook to train the models from scratch on CIFAR10/100.
 It will takes several hours depend on the complexity of the model and the allocated GPU type.
@@ -19,13 +19,19 @@ It will automatically load the code and the pretrained weights from GitHub.
 
 ``` python
 import torch
-model = torch.hub.load("chenyaofo/pytorch-cifar-models", "cifar_resnet20", pretrained=True)
+model = torch.hub.load("chenyaofo/pytorch-cifar-models", "cifar10_resnet20", pretrained=True)
+```
+
+To list all available model entry, you can run:
+
+```python
+import torch
+from pprint import pprint
+pprint(torch.hub.list("chenyaofo/pytorch-cifar-models", force_reload=True))
 ```
 
 
 ## Model Zoo
-
-The pretrained weights of the following models are avaliable in the [release](https://github.com/chenyaofo/pytorch-cifar-models/releases).
 
 ### CIFAR-10
 
@@ -45,8 +51,5 @@ The pretrained weights of the following models are avaliable in the [release](ht
 | Resnet44 | 69.49          | 90.39         | 0.66        | 97.44    | log \| tensorboard |
 | Resnet56 | 70.79          | 91.10         | 0.85        | 125.75   | log \| tensorboard |
 
----
-
-**Note**: #Params and MAdds only counts the convolution and linear layer.
 
 
