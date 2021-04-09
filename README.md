@@ -4,7 +4,7 @@
 
 The goal of this project is to provide some neural network examples and a simple training codebase for begginners.
 
-## Get Started with Google Colab (TODO)
+## Get Started with Google Colab <a href="https://colab.research.google.com/github/chenyaofo/pytorch-cifar-models/blob/master/colab/start_on_colab.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 **Train Models**: Open the notebook to train the models from scratch on CIFAR10/100.
 It will takes several hours depend on the complexity of the model and the allocated GPU type.
