@@ -172,7 +172,6 @@ for dataset in ["cifar10", "cifar100"]:
             method_name = f"{dataset}_{model_name}{'_bn' if batch_norm else ''}"
             model_urls = cifar10_pretrained_weight_urls if dataset == "cifar10" else cifar100_pretrained_weight_urls
             num_classes = 10 if dataset == "cifar10" else 100
-            print(f"'{model_name}{'_bn' if batch_norm else ''}':'',")
             setattr(
                 thismodule,
                 method_name,

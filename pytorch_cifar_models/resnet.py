@@ -189,8 +189,6 @@ for dataset in ["cifar10", "cifar100"]:
         method_name = f"{dataset}_{model_name}"
         model_urls = cifar10_pretrained_weight_urls if dataset == "cifar10" else cifar100_pretrained_weight_urls
         num_classes = 10 if dataset == "cifar10" else 100
-        # print(f"from .vgg import {method_name}")
-        print(f"def {method_name}(*args, **kwargs) -> CifarResNet: pass")
         setattr(
             thismodule,
             method_name,
@@ -200,83 +198,3 @@ for dataset in ["cifar10", "cifar100"]:
                     model_urls=model_urls,
                     num_classes=num_classes)
         )
-
-
-# def cifar10_resnet20(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet20",
-#                    layers=[3, 3, 3],
-#                    model_urls=cifar10_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=10,
-#                    **kwargs)
-
-
-# def cifar100_resnet20(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet20",
-#                    layers=[3, 3, 3],
-#                    model_urls=cifar100_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=100,
-#                    **kwargs)
-
-
-# def cifar10_resnet32(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet32",
-#                    layers=[5, 5, 5],
-#                    model_urls=cifar10_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=10,
-#                    **kwargs)
-
-
-# def cifar100_resnet32(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet32",
-#                    layers=[5, 5, 5],
-#                    model_urls=cifar100_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=100,
-#                    **kwargs)
-
-
-# def cifar10_resnet44(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet44",
-#                    layers=[7, 7, 7],
-#                    model_urls=cifar10_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=10,
-#                    **kwargs)
-
-
-# def cifar100_resnet44(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet44",
-#                    layers=[7, 7, 7],
-#                    model_urls=cifar100_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=100,
-#                    **kwargs)
-
-
-# def cifar10_resnet56(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet56",
-#                    layers=[9, 9, 9],
-#                    model_urls=cifar10_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=10,
-#                    **kwargs)
-
-
-# def cifar100_resnet56(pretrained=False, **kwargs):
-#     return _resnet(arch="resnet56",
-#                    layers=[9, 9, 9],
-#                    model_urls=cifar100_pretrained_weight_urls,
-#                    progress=True,
-#                    pretrained=pretrained,
-#                    num_classes=100,
-#                    **kwargs)
