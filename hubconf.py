@@ -1,21 +1,6 @@
+import pytorch_cifar_models
+
 dependencies = ['torch']
 
-from pytorch_cifar_models import cifar10_resnet20
-from pytorch_cifar_models import cifar10_resnet32
-from pytorch_cifar_models import cifar10_resnet44
-from pytorch_cifar_models import cifar10_resnet56
-
-from pytorch_cifar_models import cifar100_resnet20
-from pytorch_cifar_models import cifar100_resnet32
-from pytorch_cifar_models import cifar100_resnet44
-from pytorch_cifar_models import cifar100_resnet56
-
-from pytorch_cifar_models import cifar10_vgg11_bn
-from pytorch_cifar_models import cifar10_vgg13_bn
-from pytorch_cifar_models import cifar10_vgg16_bn
-from pytorch_cifar_models import cifar10_vgg19_bn
-
-from pytorch_cifar_models import cifar100_vgg11_bn
-from pytorch_cifar_models import cifar100_vgg13_bn
-from pytorch_cifar_models import cifar100_vgg16_bn
-from pytorch_cifar_models import cifar100_vgg19_bn
+models = filter(lambda name: name.startswith("cifar"), dir(pytorch_cifar_models))
+globals().update({model: getattr(pytorch_cifar_models, model) for model in models})
