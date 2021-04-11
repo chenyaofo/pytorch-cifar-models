@@ -18,4 +18,16 @@ from .vgg import cifar100_vgg13_bn
 from .vgg import cifar100_vgg16_bn
 from .vgg import cifar100_vgg19_bn
 
-__version__ = "0.0.1-alpha"
+from .vit import cifar10_vit_b16
+from .vit import cifar10_vit_b32
+from .vit import cifar10_vit_l16
+from .vit import cifar10_vit_l32
+from .vit import cifar10_vit_h14
+
+from .vit import cifar100_vit_b16
+from .vit import cifar100_vit_b32
+from .vit import cifar100_vit_l16
+from .vit import cifar100_vit_l32
+from .vit import cifar100_vit_h14
+
+__version__ = "0.1.0-alpha"
