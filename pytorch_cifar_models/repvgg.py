@@ -38,15 +38,15 @@ from functools import partial
 from typing import Union, List, Dict, Any, cast
 
 cifar10_pretrained_weight_urls = {
-    'repvgg_a0': '',
-    'repvgg_a1': '',
-    'repvgg_a2': '',
+    'repvgg_a0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar10_repvgg_a0-ef08a50e.pt',
+    'repvgg_a1': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar10_repvgg_a1-38d2431b.pt',
+    'repvgg_a2': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar10_repvgg_a2-09488915.pt',
 }
 
 cifar100_pretrained_weight_urls = {
-    'repvgg_a0': '',
-    'repvgg_a1': '',
-    'repvgg_a2': '',
+    'repvgg_a0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar100_repvgg_a0-2df1edd0.pt',
+    'repvgg_a1': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar100_repvgg_a1-c06b21a7.pt',
+    'repvgg_a2': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar100_repvgg_a2-8e71b1f8.pt',
 }
 
 
