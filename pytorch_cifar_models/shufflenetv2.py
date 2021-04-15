@@ -46,17 +46,17 @@ from typing import Dict, Type, Any, Callable, Union, List, Optional
 
 
 cifar10_pretrained_weight_urls = {
-    'shufflenet_v2_x0_5': '',
-    'shufflenet_v2_x1_0': '',
-    'shufflenet_v2_x1_5': '',
-    'shufflenet_v2_x2_0': '',
+    'shufflenetv2_x0_5': '',
+    'shufflenetv2_x1_0': '',
+    'shufflenetv2_x1_5': '',
+    'shufflenetv2_x2_0': '',
 }
 
 cifar100_pretrained_weight_urls = {
-    'shufflenet_v2_x0_5': '',
-    'shufflenet_v2_x1_0': '',
-    'shufflenet_v2_x1_5': '',
-    'shufflenet_v2_x2_0': '',
+    'shufflenetv2_x0_5': '',
+    'shufflenetv2_x1_0': '',
+    'shufflenetv2_x1_5': '',
+    'shufflenetv2_x2_0': '',
 }
 
 
