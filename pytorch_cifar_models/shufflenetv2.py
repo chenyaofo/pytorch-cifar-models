@@ -46,17 +46,17 @@ from typing import Dict, Type, Any, Callable, Union, List, Optional
 
 
 cifar10_pretrained_weight_urls = {
-    'shufflenetv2_x0_5': '',
-    'shufflenetv2_x1_0': '',
-    'shufflenetv2_x1_5': '',
-    'shufflenetv2_x2_0': '',
+    'shufflenetv2_x0_5': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar10_shufflenetv2_x0_5-1308b4e9.pt',
+    'shufflenetv2_x1_0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar10_shufflenetv2_x1_0-98807be3.pt',
+    'shufflenetv2_x1_5': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar10_shufflenetv2_x1_5-296694dd.pt',
+    'shufflenetv2_x2_0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar10_shufflenetv2_x2_0-ec31611c.pt',
 }
 
 cifar100_pretrained_weight_urls = {
-    'shufflenetv2_x0_5': '',
-    'shufflenetv2_x1_0': '',
-    'shufflenetv2_x1_5': '',
-    'shufflenetv2_x2_0': '',
+    'shufflenetv2_x0_5': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar100_shufflenetv2_x0_5-1977720f.pt',
+    'shufflenetv2_x1_0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar100_shufflenetv2_x1_0-9ae22beb.pt',
+    'shufflenetv2_x1_5': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar100_shufflenetv2_x1_5-e2c85ad8.pt',
+    'shufflenetv2_x2_0': 'https://github.com/chenyaofo/pytorch-cifar-models/releases/download/shufflenetv2/cifar100_shufflenetv2_x2_0-e7e584cd.pt',
 }
 
 
