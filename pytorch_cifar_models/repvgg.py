@@ -98,7 +98,7 @@ class RepVGGBlock(nn.Module):
 
 #   This func derives the equivalent kernel and bias in a DIFFERENTIABLE way.
 #   You can get the equivalent kernel and bias at any time and do whatever you want,
-    #   for example, apply some penalties or constraints during training, just like you do to the other models.
+#   for example, apply some penalties or constraints during training, just like you do to the other models.
 #   May be useful for quantization or pruning.
 
 
@@ -220,8 +220,6 @@ g4_map = {l: 4 for l in optional_groupwise_layers}
 def _repvgg(arch: str, num_blocks: List[int], width_multiplier: List[float],
             model_urls: Dict[str, str],
             pretrained: bool = False, progress: bool = True, **kwargs: Any) -> RepVGG:
-    if pretrained:
-        kwargs['init_weights'] = False
     model = RepVGG(num_blocks=num_blocks, width_multiplier=width_multiplier,
                    override_groups_map=None, **kwargs)
     if pretrained:
