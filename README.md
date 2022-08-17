@@ -1,4 +1,4 @@
-# Pytorch CIFAR Models
+# PyTorch CIFAR Models
 
 ## Introduction
 
