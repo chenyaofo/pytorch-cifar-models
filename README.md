@@ -15,7 +15,8 @@ It will only take about few seconds.
 ## Use Models with Pytorch Hub
 
 You can simply use the pretrained models in your project with `torch.hub` API.
-It will automatically load the code and the pretrained weights from GitHub.
+It will automatically load the code and the pretrained weights from GitHub
+(If you cannot directly access GitHub, please check [this issue](https://github.com/chenyaofo/pytorch-cifar-models/issues/14) for solution).
 
 ``` python
 import torch
