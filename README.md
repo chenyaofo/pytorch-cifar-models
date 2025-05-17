@@ -82,15 +82,14 @@ pprint(torch.hub.list("chenyaofo/pytorch-cifar-models", force_reload=True))
 | repvgg_a1 | 76.12 | 92.71 | 12.94 | 851.44 | [model](https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar100_repvgg_a1-c06b21a7.pt) \| [log](https://cdn.jsdelivr.net/gh/chenyaofo/pytorch-cifar-models@logs/logs/cifar100/repvgg_a1/default.log)
 | repvgg_a2 | 77.18 | 93.51 | 26.94 | 1850.22 | [model](https://github.com/chenyaofo/pytorch-cifar-models/releases/download/repvgg/cifar100_repvgg_a2-8e71b1f8.pt) \| [log](https://cdn.jsdelivr.net/gh/chenyaofo/pytorch-cifar-models@logs/logs/cifar100/repvgg_a2/default.log)
 
-If you want cite this repo:
+If you want to cite this repo:
 
 ```
 @misc{chenyaofo_pytorch_cifar_models,
   author       = {Yaofo Chen},
   title        = {{pytorch-cifar-models}: Pretrained Models for CIFAR}},
-  year         = {2021},
   howpublished = {\url{https://github.com/chenyaofo/pytorch-cifar-models }},
-  note         = {Accessed: 2024-10-16},
+  note         = {Accessed: 2025-5-17},
   abstract     = {This repository provides pretrained neural network models trained on CIFAR-10 and CIFAR-100 datasets, including ResNet, VGG, MobileNetV2, ShuffleNetV2, and RepVGG variants.}
 }
 ```
