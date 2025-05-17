@@ -87,7 +87,7 @@ If you want to cite this repo:
 ```
 @misc{chenyaofo_pytorch_cifar_models,
   author       = {Yaofo Chen},
-  title        = {{pytorch-cifar-models}: Pretrained Models for CIFAR}},
+  title        = {PyTorch CIFAR Models},
   howpublished = {\url{https://github.com/chenyaofo/pytorch-cifar-models }},
   note         = {Accessed: 2025-5-17},
   abstract     = {This repository provides pretrained neural network models trained on CIFAR-10 and CIFAR-100 datasets, including ResNet, VGG, MobileNetV2, ShuffleNetV2, and RepVGG variants.}
